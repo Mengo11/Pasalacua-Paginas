@@ -7,7 +7,7 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #121318;
+    background-color: #0f0f0f;
     height: 100vh; 
     overflow: hidden; /* Evita scroll innecesario */
 }

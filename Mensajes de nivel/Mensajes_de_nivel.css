@@ -7,7 +7,7 @@
 body {
     font-family: sans-serif;
     margin: 0;
-    background-color: #1a1a1a;
+    background-color: #0f0f0f;
     color: #ffffff;
     height: 100vh;
     overflow: hidden;
@@ -153,7 +153,7 @@ main {
 h1 {
     font-size: 32px;
     margin-bottom: 30px;
-    background-color: #1a1a1a;
+    background-color: #0f0f0f;
     color: aliceblue;
 }
 
@@ -167,7 +167,7 @@ h1 {
 
 .form-group label {
     font-weight: bold;
-    background-color: #1a1a1a;
+    background-color: #0f0f0f;
     color: aliceblue;
     font-size: 18px;
 }
@@ -181,7 +181,7 @@ label {
 select[name="materias"] {
     width: 100%;
     padding: 12px;
-    border: 1px solid #1a1a1a;
+    border: 1px solid #0f0f0f;
     border-radius: 5px;
     font-size: 16px;
     background-color: aliceblue;
