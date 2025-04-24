@@ -1,0 +1,371 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #0f0f0f;
+    color: #ffffff;
+    height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    display: flex;
+    min-height: 40px;
+    background: rgb(0,122,255);
+    background: linear-gradient(90deg, rgba(0,122,255,1) 100%, rgba(47,90,231,1) 100%);
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    width: 100%;
+    position: relative;
+    z-index: 15;
+}
+
+.logo {
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: aliceblue;
+}
+
+.logo img {
+    height: 50px;
+    margin-right: 10px;
+}
+
+h2 {
+    padding: 10px;
+    font-size: 24px;
+    line-height: 1.2;
+    line-height: 20px;
+}
+
+.user {
+    display: flex;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    background-color: aliceblue;
+    border-radius: 10px;
+    margin-right: 10px;
+}
+
+.user-icon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+/* Estilo del botón de hamburguesa */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 20;
+    position: relative;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* Transformación del botón en "X" */
+.menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Menú Lateral */
+.menu {
+    width: 200px;
+    background: rgb(0,122,255);
+    background: linear-gradient(90deg, rgba(0,122,255,1) 100%, rgba(47,90,231,1) 100%);
+    color: white;
+    position: fixed;
+    top: 0;
+    padding-top: 100px;
+    bottom: 0;
+    z-index: 10;
+    transition: transform 0.3s ease;
+}
+
+.menu ul {
+    list-style: none;
+}
+
+.menu ul li {
+    padding: 10px 10px;
+    margin: 5px 10px;
+    border: 1px solid #007AFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    background-color: transparent;
+}
+
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+.menu ul li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.user-menu {
+    margin: 20px 10px;
+    background-color: #007AFF;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+}
+
+main {
+    margin-left: 220px;
+    padding: 40px;
+    min-height: calc(100vh - 60px);
+    position: relative;
+    z-index: 5;
+}
+
+h1 {
+    font-size: 32px;
+    margin-bottom: 30px;
+    background-color: #0f0f0f;
+    color: aliceblue;
+}
+
+.form-spread {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.form-group label {
+    font-weight: bold;
+    background-color: #0f0f0f;
+    color: aliceblue;
+    font-size: 18px;
+}
+
+label {
+    font-weight: bold;
+    color: aliceblue;
+    font-size: 18px;
+}
+
+select[name="materias"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #0f0f0f;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: aliceblue;
+    color: black;
+    cursor: pointer;
+    appearance: none;
+    background-image: url('data:image/svg+xml;utf8,<svg fill="black" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 20px;
+}
+
+select[name="materias"]:focus {
+    outline: none;
+    border-color: #007AFF;
+    box-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
+}
+
+select[name="materias"] option {
+    background-color: aliceblue;
+    color: black;
+    padding: 10px;
+}
+
+/* Resaltar opción al pasar el cursor */
+select[name="materias"] option:hover,
+select[name="materias"] option:focus {
+    background-color: #3e80c5 !important;
+    color: white;
+}
+
+/* Limitar altura para mostrar solo 4 opciones con scroll */
+select[name="materias"] {
+    max-height: 128px;
+}
+
+textarea,
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: aliceblue;
+    color: black;
+}
+
+textarea:focus,
+input[type="email"]:focus {
+    outline: none;
+    border-color: #007AFF;
+    box-shadow: 0 0 5px rgba(0, 122, 255, 0.5);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.submit-btn {
+    background: rgb(0,122,255);
+    background: linear-gradient(90deg, rgba(0,122,255,1) 100%, rgba(47,90,231,1) 100%);
+    color: aliceblue;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    align-self: flex-end;
+}
+
+.submit-btn:hover {
+    background: linear-gradient(90deg, rgba(47,90,231,1) 100%, rgba(0,122,255,1) 100%);
+}
+
+/* Responsividad para móviles */
+@media (max-width: 700px) {
+    body {
+        background-color: aliceblue;
+    }
+
+    header {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        min-height: auto;
+        padding: 10px;
+        z-index: 15;
+    }
+
+    .logo {
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 0;
+    }
+
+    .logo h2 {
+        display: none;
+    }
+
+    .logo img {
+        margin-bottom: 0;
+        margin-right: 0;
+        height: 40px;
+    }
+
+    .menu-toggle {
+        display: block;
+        order: -1;
+        z-index: 20;
+    }
+
+    .user-header {
+        display: none;
+    }
+
+    .user-menu {
+        display: flex;
+        background-color: #007AFF;
+    }
+
+    .menu {
+        transform: translateX(-100%);
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background: aliceblue;
+    }
+
+    .menu.active {
+        transform: translateX(0);
+    }
+
+    .menu ul li {
+        margin: 5px 20px;
+        background: rgb(0,122,255);
+        background: linear-gradient(90deg, rgba(0,122,255,1) 100%, rgba(47,90,231,1) 100%);
+        border: 1px solid #007AFF;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .menu ul li a {
+        color: aliceblue;
+    }
+
+    .menu ul li:hover {
+        background-color: rgba(180, 167, 167, 0.1);
+    }
+
+    main {
+        margin-left: 0;
+        padding: 40px;
+    }
+
+    .form-spread {
+        padding: 0 10px;
+    }
+}
+
+/* Nuevo estilo para los botones "Agregar Comunicado" y "Eliminar Comunicado" */
+.btn-container {
+    display: flex;
+    justify-content: space-between;
+    margin: 20px 0;
+}
+
+.btn-container button {
+    background: rgb(0,122,255);
+    background: linear-gradient(90deg, rgba(0,122,255,1) 100%, rgba(47,90,231,1) 100%);
+    color: aliceblue;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 48%;
+}
+
+.btn-container button:hover {
+    background: linear-gradient(90deg, rgba(47,90,231,1) 100%, rgba(0,122,255,1) 100%);
+}
+
